@@ -1,6 +1,6 @@
 // #16. 오브젝트
 
-
+package space.doky.ch16
 
 fun main() {
 
@@ -9,7 +9,6 @@ fun main() {
   // 클래스: 생성자를 통해 실제하는 인스턴스 객체를 만들어야 했음
   // 싱글톤 패턴을 언어적 치원에서 지원하는 것!!
 
-  
   println(Counter)
   println(Counter.count)
 
@@ -21,8 +20,6 @@ fun main() {
   Counter.clear()
   println(Counter.count)
   println("========")
-
-
 
   var a = FoodPoll("AAA")
   var b = FoodPoll("BBB")
@@ -36,10 +33,7 @@ fun main() {
   println(a.count)
   println(b.count)
   println(FoodPoll.total)
-
 }
-
-
 
 // 인스턴스를 생성하지 않기 때문에 생성자를 만들지는 않음
 // -> 오브젝트 이름에 직접 참조연산자 사용 가능!
@@ -61,16 +55,15 @@ object Counter {
 // instance 간의 공용으로 사용할 수 있는 object를 의미
 // 기존 언어의 static과 동일한 기능을 함!
 
-class FoodPoll (val name: String) {
+class FoodPoll(val name: String) {
   companion object {
     var total = 0
   }
 
   var count = 0
 
-  fun vote(){
+  fun vote() {
     total++
     count++
   }
-
 }
